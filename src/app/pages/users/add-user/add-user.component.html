@@ -1,0 +1,206 @@
+<div>
+  <mat-card>
+    <div>
+      <button mat-raised-button color="primary" (click)="addUser()">
+        <i class="fa fa-check" aria-hidden="true"> Save</i>
+      </button>
+    </div>
+    <hr>
+    <br>
+    <div style="text-align: center;">
+      <div style="text-align: center;">
+        <h6>Image Preview</h6>
+        <img [src]="imageURL" width="200px" height="200px">
+      </div>
+      <hr>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+        <div>
+          <input type="text" placeholder="Enter Name" [(ngModel)]="name" name="name" class="form-control">
+        </div>
+        <br>
+        <div>
+          <input type="email" class="form-control" [(ngModel)]="email" name="email" placeholder="Enter email">
+        </div>
+        <br>
+        <div>
+          <input type="file" accept="image/*" (change)="showPreview($event)" class="form-control">
+        </div>
+        <br>
+      </div>
+    </div>
+    <br><br>
+    <div>
+      <mat-tab-group>
+        <mat-tab label="Access Rights">
+          <br><br>
+          <div>
+            <h6>Dashboard</h6>
+            <hr>
+            <mat-radio-group aria-label="Select an option" [(ngModel)]="aDashboard" name="aDashboard">
+              <mat-radio-button value="all">All</mat-radio-button><br>
+              <mat-radio-button value="readonly">Read Only</mat-radio-button><br>
+              <mat-radio-button value="none">None</mat-radio-button>
+            </mat-radio-group>
+            <br>
+          </div>
+          <br>
+          <div>
+            <h6>Discuss</h6>
+            <hr>
+            <mat-radio-group aria-label="Select an option" [(ngModel)]="aDiscuss" name="aDiscuss">
+              <mat-radio-button value="all">All</mat-radio-button><br>
+              <mat-radio-button value="readonly">Read Only</mat-radio-button><br>
+              <mat-radio-button value="none">None</mat-radio-button>
+            </mat-radio-group>
+            <br>
+          </div>
+          <br>
+          <div>
+            <h6>Site Aquisition</h6>
+            <hr>
+            <mat-radio-group aria-label="Select an option" [(ngModel)]="aSiteAcq" name="aSiteAcq">
+              <mat-radio-button value="all">All</mat-radio-button><br>
+              <mat-radio-button value="readonly">Read Only</mat-radio-button><br>
+              <mat-radio-button value="none">None</mat-radio-button>
+            </mat-radio-group>
+            <br>
+          </div>
+          <br>
+          <div>
+            <h6>Calendar</h6>
+            <hr>
+            <mat-radio-group aria-label="Select an option" [(ngModel)]="aCalendar" name="aCalendar">
+              <mat-radio-button value="all">All</mat-radio-button><br>
+              <mat-radio-button value="readonly">Read Only</mat-radio-button><br>
+              <mat-radio-button value="none">None</mat-radio-button>
+            </mat-radio-group>
+            <br>
+          </div>
+          <br>
+          <div>
+            <h6>Contacts</h6>
+            <hr>
+            <mat-radio-group aria-label="Select an option" [(ngModel)]="aContacts" name="aContacts">
+              <mat-radio-button value="all">All</mat-radio-button><br>
+              <mat-radio-button value="readonly">Read Only</mat-radio-button><br>
+              <mat-radio-button value="none">None</mat-radio-button>
+            </mat-radio-group>
+            <br>
+          </div>
+          <br>
+          <div>
+            <h6>CRM</h6>
+            <hr>
+            <mat-radio-group aria-label="Select an option" [(ngModel)]="aCrm" name="aCrm">
+              <mat-radio-button value="all">All</mat-radio-button><br>
+              <mat-radio-button value="readonly">Read Only</mat-radio-button><br>
+              <mat-radio-button value="none">None</mat-radio-button>
+            </mat-radio-group>
+            <br>
+          </div>
+          <br>
+          <div>
+            <h6>Sales</h6>
+            <hr>
+            <mat-radio-group aria-label="Select an option" [(ngModel)]="aSales" name="aSales">
+              <mat-radio-button value="all">All</mat-radio-button><br>
+              <mat-radio-button value="readonly">Read Only</mat-radio-button><br>
+              <mat-radio-button value="none">None</mat-radio-button>
+            </mat-radio-group>
+            <br>
+          </div>
+          <br>
+          <div>
+            <h6>Site Location</h6>
+            <hr>
+            <mat-radio-group aria-label="Select an option" [(ngModel)]="aSiteLoc" name="aSiteLoc">
+              <mat-radio-button value="all">All</mat-radio-button><br>
+              <mat-radio-button value="readonly">Read Only</mat-radio-button><br>
+              <mat-radio-button value="none">None</mat-radio-button>
+            </mat-radio-group>
+            <br>
+          </div>
+          <br>
+          <div>
+            <h6>Reminders</h6>
+            <hr>
+            <mat-radio-group aria-label="Select an option" [(ngModel)]="aReminders" name="aReminders">
+              <mat-radio-button value="all">All</mat-radio-button><br>
+              <mat-radio-button value="readonly">Read Only</mat-radio-button><br>
+              <mat-radio-button value="none">None</mat-radio-button>
+            </mat-radio-group>
+            <br>
+          </div>
+          <br>
+          <div>
+            <h6>Purchase</h6>
+            <hr>
+            <mat-radio-group aria-label="Select an option" [(ngModel)]="aPurchase" name="aPurchase">
+              <mat-radio-button value="all">All</mat-radio-button><br>
+              <mat-radio-button value="readonly">Read Only</mat-radio-button><br>
+              <mat-radio-button value="none">None</mat-radio-button>
+            </mat-radio-group>
+            <br>
+          </div>
+          <br>
+          <div>
+            <h6>Invoicing</h6>
+            <hr>
+            <mat-radio-group aria-label="Select an option" [(ngModel)]="aInvoicing" name='aInvoicing'>
+              <mat-radio-button value="all">All</mat-radio-button><br>
+              <mat-radio-button value="readonly">Read Only</mat-radio-button><br>
+              <mat-radio-button value="none">None</mat-radio-button>
+            </mat-radio-group>
+            <br>
+          </div>
+          <br>
+          <div>
+            <h6>Settings</h6>
+            <hr>
+            <mat-radio-group aria-label="Select an option" [(ngModel)]="aSettings" name="aSettings">
+              <mat-radio-button value="all">All</mat-radio-button><br>
+              <mat-radio-button value="readonly">Read Only</mat-radio-button><br>
+              <mat-radio-button value="none">None</mat-radio-button>
+            </mat-radio-group>
+            <br>
+          </div>
+          <br>
+          <br>
+        </mat-tab>
+        <mat-tab label="Preferences">
+          <br><br>
+          <div>
+            <div class="row">
+              <div class="col-xl-2 col-lg-2 col-md-4 col-sm-12">
+                <h6>Notification Type</h6>
+              </div>
+              <div class="col-xl-10 col-lg-10 col-md-8 col-sm-12">
+                <mat-radio-group aria-label="Select an option" [(ngModel)]="notifyBy" name="notifyBy">
+                  <mat-radio-button value="email"> Handle by Emails</mat-radio-button> &nbsp;&nbsp;
+                  <mat-radio-button value="odoo"> Handle in Odoo</mat-radio-button>
+                </mat-radio-group>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-xl-2 col-lg-2 col-md-4 col-sm-12">
+                <h6>Signature</h6>
+              </div>
+              <div class="col-xl-10 col-lg-10 col-md-8 col-sm-12">
+                <angular-editor [(ngModel)]="htmlContent" [config]="config"></angular-editor>
+                <div class="html">
+                  {{ htmlContent }}
+                </div>
+              </div>
+            </div>
+            <br>
+          </div>
+          <br>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </mat-card>
+</div>

@@ -1,0 +1,84 @@
+<div>
+  <section>
+    <div class="example-button-row">
+      <div class="example-flex-container">
+        <div class="example-button-container">
+          <button mat-raised-button color="primary" (click)="createAlarm()"
+            aria-label="Example icon button with a menu icon"> Create
+            &nbsp;
+            <mat-icon>alarm_add</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br><br>
+
+  <div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource">
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <mat-form-field floatLabel="never">
+            <input matInput placeholder="Name" [value]="element.name" [(ngModel)]="element.name">
+          </mat-form-field>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="check1">
+        <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+        <mat-cell *matCellDef="let element"> </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="unit">
+        <mat-header-cell *matHeaderCellDef> Unit </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <mat-form-field floatLabel="never">
+            <mat-select [(ngModel)]="element.unit">
+              <mat-option value="Minute(s)"> Minute(s) </mat-option>
+              <mat-option value="Hour(s)"> Hour(s) </mat-option>
+              <mat-option value="Day(s)"> Day(s) </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="check2">
+        <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+        <mat-cell *matCellDef="let element"> </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="type">
+        <mat-header-cell *matHeaderCellDef> Type </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <mat-form-field floatLabel="never">
+            <mat-select [(ngModel)]="element.type">
+              <mat-option value="Notification"> Notification </mat-option>
+              <mat-option value="Email"> Email </mat-option>
+              <mat-option value="SMS Text Message"> SMS Text Message </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="check3">
+        <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+        <mat-cell *matCellDef="let element"> </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="action">
+        <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <mat-icon style="color: blue;cursor: pointer;" (click)="editAlarm(element)">create</mat-icon>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <mat-icon style="color: red;cursor: pointer;" (click)="deleteCalAlarm(element)">delete</mat-icon>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+</div>

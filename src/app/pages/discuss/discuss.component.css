@@ -1,0 +1,102 @@
+/* .material-icons {
+  font-size: 18px;
+} */
+
+.btn {
+  padding: 4px;
+}
+
+.button {
+  position: absolute;
+  bottom: 1%;
+  width: 90%;
+}
+
+.inpCh {
+  border: 1px solid black;
+}
+
+/* .list {
+  background-color: #66615b;
+  color: #ffffff;
+  border: 1px solid #66615b;
+} */
+
+.mainList {
+  height: 550px;
+}
+
+.mainList1 {
+  height: 550px;
+}
+
+@media screen and (max-width: 992px) {
+  .mainList {
+    height: auto;
+  }
+
+  .mainList1 {
+    margin-top: 15px;
+    height: 550px;
+  }
+
+  #example {
+    width: auto;
+    height: 250px;
+    padding: 20px;
+    overflow: auto;
+  }
+}
+
+.receiver {
+  float: left;
+  width: auto;
+  background-color: purple;
+  border-radius: 25px;
+  color: white;
+  padding-top: 1%;
+  padding-bottom: -1%;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.sender {
+  float: right;
+  width: auto;
+  background-color: skyblue;
+  border-radius: 25px;
+  color: white;
+  padding-top: 1%;
+  padding-bottom: -1%;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.primary {
+  color: cyan;
+}
+
+.perple {
+  color: purple;
+  /* background-color: purple; */
+}
+
+.yellow {
+  /* background-color: yellow; */
+  color: yellow;
+}
+
+#example {
+  width: auto;
+  height: 400px;
+  padding: 20px;
+  overflow: auto;
+}
+
+.senMsgImg {
+  float: right;
+}
+
+.recMsgImg {
+  float: left;
+}

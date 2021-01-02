@@ -1,0 +1,61 @@
+<div style="display: inline-block;">
+
+  <div class="example-button">
+    <button mat-raised-button [matMenuTriggerFor]="animals"> MEASURES
+      <span class="material-icons">
+        keyboard_arrow_down
+      </span>
+    </button>
+
+    <mat-menu #animals="matMenu">
+      <button mat-menu-item>Vertebrates</button>
+      <button mat-menu-item>Invertebrates</button>
+    </mat-menu>
+  </div>
+
+
+
+  <div class="example-button-container">
+    <button mat-mini-fab color="primary" (click)="lineShow()">
+      <i class="fa fa-area-chart" aria-hidden="true"></i>
+    </button>
+  </div>
+  <div class="example-button-container">
+    <button mat-mini-fab color="accent" (click)="barShow()">
+      <i class="fa fa-bar-chart" aria-hidden="true"></i>
+    </button>
+  </div>
+  <div class="example-button-container">
+    <button mat-mini-fab color="warn" (click)="pieShow()">
+      <i class="fa fa-pie-chart" aria-hidden="true"></i>
+    </button>
+  </div>
+</div>
+
+<br>
+<br>
+<hr>
+<br>
+
+<div style="display: block">
+  <div *ngIf="showLine">
+    <canvas mdbChart [chartType]="chartType1" [datasets]="chartDatasets1" [labels]="chartLabels" [colors]="chartColors"
+      [options]="chartOptions" [legend]="true" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+    </canvas>
+  </div>
+
+  <div *ngIf="showBar">
+    <canvas mdbChart [chartType]="chartType2" [datasets]="chartDatasets2" [labels]="chartLabels" [colors]="chartColors"
+      [options]="chartOptions" [legend]="true" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+    </canvas>
+  </div>
+
+
+  <div *ngIf="showPie">
+    <canvas mdbChart [chartType]="chartType3" [datasets]="chartDatasets3" [labels]="chartLabels1"
+      [colors]="chartColors1" [options]="chartOptions" [legend]="true" (chartHover)="chartHovered($event)"
+      (chartClick)="chartClicked($event)">
+    </canvas>
+  </div>
+
+</div>

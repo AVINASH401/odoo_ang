@@ -1,0 +1,14 @@
+.example-button-container {
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.example-button {
+  display: inline-block;
+  margin-left: 5px;
+  margin-right: 15px;
+}
+
+:host .mat-button-toggle-group {
+  border-radius: 20px !important;
+}

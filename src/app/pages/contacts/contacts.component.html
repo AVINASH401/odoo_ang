@@ -1,0 +1,35 @@
+<mat-card>
+  <div>
+    <mat-paginator [length]="data2.length" [pageSize]="size" [pageIndex]="page" (page)="getData($event)">
+    </mat-paginator>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-10">
+      <mat-form-field class="example-full-width">
+        <input matInput (keyup)="applyFilter($event)" placeholder="Search" #input>
+      </mat-form-field>
+    </div>
+    <div class="col-2">
+      <button mat-mini-fab color="primary" (click)="addContact()">
+        <mat-icon>person_add_alt_1</mat-icon>
+      </button>
+    </div>
+  </div>
+  <br>
+  <mat-grid-list [cols]="isMobile ? 1 : 3" rowHeight="3:1" [gutterSize]="'10px'">
+    <mat-grid-tile *ngFor="let d of data" (click)="editCust(d._id)" style="cursor: pointer;">
+      <div class="row tile">
+        <div class="col-4">
+          <img src="{{main.URL}}/{{d.picture}}">
+        </div>
+        <div class="col-8">
+          <h6>{{d.name}}</h6>
+          <!-- <p>{{d.country}}</p> -->
+          <p>{{d.email}}</p>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <br><br>
+</mat-card>

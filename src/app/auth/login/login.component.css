@@ -1,0 +1,83 @@
+.main {
+  background-color: #a4508b;
+  background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
+}
+
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+
+.box {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+.box {
+  /* background-color: #7f5a83; */
+  /* background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%); */
+  background-color: #2c2c2c;
+}
+
+.mainrow {
+  width: 40%;
+  height: 55%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+@media screen and (max-width: 280px) {
+  .mainrow {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .mainrow {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .mainrow {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .mainrow {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 411px) {
+  .mainrow {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .mainrow {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mainrow {
+    width: 65%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .mainrow {
+    width: 65%;
+  }
+}

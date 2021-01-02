@@ -1,0 +1,89 @@
+<div style="z-index: 9;">
+  <div class="row">
+    <div class="col-10">
+      <h5><b>Name: &nbsp;{{eventName}}</b></h5>
+    </div>
+    <div class="col-2">
+      <span style="float: right;" class="material-icons" mat-dialog-close>
+        clear
+      </span>
+    </div>
+  </div>
+  <hr>
+  <div>
+    <mat-form-field class="example-full-width">
+      <h6>
+        <input matInput [(ngModel)]="eventName" name="eventName" placeholder="Meeting Subject">
+      </h6>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Attendees</mat-label>
+      <mat-select multiple [formControl]="contacts">
+        <mat-option *ngFor="let t of contactList" [value]="t._id">{{t.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br><br>
+    <div>
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active">Meeting Details</a>
+        </li>
+      </ul>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-xl-7 col-lg-7 col-md-8 col-sm-12">
+        <label>Starting_At :&nbsp;</label>
+        <div class="row">
+          <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12">
+            <input type="date" class="form-control" [(ngModel)]="startDate" name="startDate">
+          </div>
+          <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
+            <input type="time" class="form-control" [(ngModel)]="startTime" name="startTime">
+          </div>
+        </div>
+        <br>
+        <label>Ending_At :&nbsp;</label>
+        <div class="row">
+          <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12">
+            <input type="date" class="form-control" [(ngModel)]="endDate" name="endDate">
+          </div>
+          <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
+            <input type="time" class="form-control" [(ngModel)]="endTime" name="endTime">
+          </div>
+        </div> <br>
+        <mat-checkbox class="example-margin" [(ngModel)]="eventAllDay"> All Day</mat-checkbox>
+      </div>
+      <div class="col-xl-5 col-lg-5 col-md-4 col-sm-12">
+        <label> Duration :&nbsp;</label>
+        <input type="text" [(ngModel)]="eventDuration" name="eventDuration" placeholder="Enter duration"
+          class="form-control">
+        <br>
+        <label> Location :&nbsp;</label>
+        <input type="text" [(ngModel)]="eventLoc" name="eventLoc" placeholder="Enter location" class="form-control">
+      </div>
+    </div>
+    <br>
+    <div>
+      <mat-form-field class="example-full-width">
+        <mat-label> Description</mat-label>
+        <textarea matInput [(ngModel)]="eventDesc" name="eventDesc"></textarea>
+      </mat-form-field>
+    </div>
+    <br>
+    <div style="text-align: center;">
+      <div class="row">
+        <div class="col">
+          <button mat-raised-button color="primary" (click)="editEvent()">update</button>
+        </div>
+        <div class="col">
+          <button mat-raised-button color="warn" (click)="deleteEvent()">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+</div>
+
+<br>

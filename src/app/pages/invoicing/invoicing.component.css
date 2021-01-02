@@ -1,0 +1,15 @@
+.mat-form-field {
+  margin-top: 16px;
+}
+
+mat-grid-tile {
+  background: lightblue;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.text-inside-grid {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}

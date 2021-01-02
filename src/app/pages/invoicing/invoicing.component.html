@@ -1,0 +1,231 @@
+<mat-horizontal-stepper labelPosition="bottom" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>
+        Company Data <br> <small>Setup your company's data for reports headers.
+        </small>
+      </ng-template>
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>
+        Bank Account <br> <small>Setup your bank account to sync bank feeds.</small>
+      </ng-template>
+      <mat-form-field>
+        <mat-label>Address</mat-label>
+        <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step>
+    <ng-template matStepLabel>
+      Fiscal Year <br> <small>Define your fiscal years opening & closing dates.</small>
+    </ng-template>
+    <p>You are now done.</p>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+
+  <mat-step>
+    <ng-template matStepLabel>
+      Chart of Accounts <br> <small>Setup your chart of accounts and record initial balances.</small>
+    </ng-template>
+    <p>You are now done.</p>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>
+
+
+<br>
+
+<div>
+  <mat-grid-list cols="2" rowHeight="2:1" [gutterSize]="'8px'">
+    <mat-grid-tile>
+      <mat-card style="width: 100%;height: 100%;">
+        <div class="text-inside-grid">
+          <h6>Tax Invoices</h6>
+          <p>Sale</p>
+          <div class="row">
+            <div class="col">
+              <button mat-raised-button color="primary">New Invoice</button>
+            </div>
+            <div class="col">
+              <p>7 Invoices to Validate</p>
+              <p>33 Unpaid Invoices</p>
+            </div>
+            <div class="col">
+              <p>1,672,134.34 ₹</p>
+              <p>1,422,410.54 ₹ </p>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-card style="width: 100%;height: 100%;">
+        <div class="text-inside-grid">
+          <h6>Vendor Bills</h6>
+          <p>Purchase</p>
+          <div class="row">
+            <div class="col">
+              <button mat-raised-button color="primary">New Bills</button>
+              <button mat-raised-button color="primary" style="margin-top: 5px;">Import Bills</button>
+            </div>
+            <div class="col">
+              <p> 1 Bills to Validate</p>
+              <p>0 Bills to Pay</p>
+            </div>
+            <div class="col">
+              <p>1,672,134.34 ₹</p>
+              <p>1,422,410.54 ₹ </p>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-card style="width: 100%;height: 100%;">
+        <div class="text-inside-grid">
+          <h6>Bank</h6>
+          <p>Bank</p>
+          <div class="row">
+            <div class="col">
+              <button mat-raised-button color="primary">Configure</button>
+              <p style="margin-top: 7px;">Create or Import Statements</p>
+            </div>
+            <div class="col">
+              <p>Balance in General Ledger</p>
+              <p>Latest Statement</p>
+            </div>
+            <div class="col">
+              <p>1,672,134.34 ₹</p>
+              <p>1,422,410.54 ₹ </p>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-card style="width: 100%;height: 100%;">
+        <div class="text-inside-grid">
+          <h6>Cheque</h6>
+          <p>Bank</p>
+          <div class="row">
+            <div class="col">
+              <button mat-raised-button color="primary">Configure</button>
+              <p style="margin-top: 7px;">Create or Import Statements</p>
+            </div>
+            <div class="col">
+              <p>Balance in General Ledger</p>
+              <p>Latest Statement</p>
+            </div>
+            <div class="col">
+              <p>1,672,134.34 ₹</p>
+              <p>1,422,410.54 ₹ </p>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-card style="width: 100%;height: 100%;">
+        <div class="text-inside-grid">
+          <h6>Cash</h6>
+          <p>cash</p>
+          <div class="row">
+            <div class="col">
+              <button mat-raised-button color="primary">New Transactions</button>
+            </div>
+            <div class="col">
+              <p>Balance in General Ledger</p>
+              <p>Latest Statement</p>
+            </div>
+            <div class="col">
+              <p>1,672,134.34 ₹</p>
+              <p>1,422,410.54 ₹ </p>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-card style="width: 100%;height: 100%;">
+        <div class="text-inside-grid">
+          <h6>Export Invoices</h6>
+          <p>Sale</p>
+          <div class="row">
+            <div class="col">
+              <button mat-raised-button color="primary">Primary</button>
+            </div>
+            <div class="col">
+              <p>7 Invoices to Validate</p>
+              <p>33 Unpaid Invoices</p>
+            </div>
+            <div class="col">
+              <p>1,672,134.34 ₹</p>
+              <p>1,422,410.54 ₹ </p>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-card style="width: 100%;height: 100%;">
+        <div class="text-inside-grid">
+          <h6>Retail Invoices</h6>
+          <p>Sale</p>
+          <div class="row">
+            <div class="col">
+              <button mat-raised-button color="primary">Primary</button>
+            </div>
+            <div class="col">
+              <p>7 Invoices to Validate</p>
+              <p>33 Unpaid Invoices</p>
+            </div>
+            <div class="col">
+              <p>1,672,134.34 ₹</p>
+              <p>1,422,410.54 ₹ </p>
+            </div>
+          </div>
+          <br>
+
+        </div>
+      </mat-card>
+    </mat-grid-tile>
+
+
+  </mat-grid-list>
+</div>
+
+<br>
+<!--------- charts ---------->
+<!-- <div style="display: block">
+  <canvas mdbChart [chartType]="chartType" [datasets]="chartDatasets" [labels]="chartLabels" [colors]="chartColors"
+    [options]="chartOptions" [legend]="true" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+  </canvas>
+</div> -->

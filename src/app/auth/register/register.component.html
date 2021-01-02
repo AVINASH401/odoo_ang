@@ -1,0 +1,46 @@
+<div class="box">
+  <div class="mainrow">
+    <mat-card>
+      <mat-card-title style="text-align: center;">ODOO Registration</mat-card-title>
+      <hr>
+      <mat-card-content>
+        <div>
+          <div>
+            <p>Name:</p>
+            <input type="text" [(ngModel)]="name" name="name" class="form-control" placeholder="Enter name">
+          </div>
+          <div>
+            <p>Email:</p>
+            <input type="email" [(ngModel)]="email" name="email" class="form-control" placeholder="Enter email">
+          </div>
+          <br>
+          <div>
+            <p>Password:</p>
+            <input type="password" [(ngModel)]="password" name="password" class="form-control"
+              placeholder="Enter password">
+          </div>
+          <div>
+            <p>Picture:</p>
+            <input type="file" accept="image/*" (change)="showPreview($event)" class="form-control">
+          </div>
+          <div style="text-align: center;">
+            <hr>
+            <img [src]="imageURL" width="100px" height="100px">
+          </div>
+          <br>
+          <div style="text-align: center;">
+            <button mat-raised-button color="primary" (click)="adminRegister()">Register</button>
+          </div>
+          <br>
+          <div style="text-align: center;">
+            <h6 style="cursor: pointer;" (click)="loginPage()">
+              <b><u> Already User ? </u></b>
+            </h6>
+          </div>
+          <br>
+        </div>
+        <br>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

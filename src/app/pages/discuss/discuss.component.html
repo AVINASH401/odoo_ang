@@ -1,0 +1,149 @@
+<div class="row mainList">
+
+  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 list">
+    <mat-card class="mainList">
+      <h6>Recent</h6>
+      <hr>
+      <mat-selection-list #shoes [multiple]="false" [(ngModel)]="selUser" name="selUser">
+        <mat-list-option (click)="userName(shoe)" *ngFor="let shoe of usersList" [value]="shoe.name">
+          {{shoe.name}}
+          <mat-divider></mat-divider>
+        </mat-list-option>
+      </mat-selection-list>
+    </mat-card>
+  </div>
+
+  <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 mainContent">
+    <mat-card class="mainList1">
+      <div>
+        <h6>{{shoes.selectedOptions.selected[0]?.value}} </h6>
+        <hr>
+      </div>
+      <br>
+
+      <div id="example" class="chatbox">
+
+        <div *ngFor="let i of discussData">
+          <ng-template #elseBlock>
+            <div>
+              <div class="receiver">
+                <p>{{i.message}}</p>
+              </div>
+              <br>
+              <div class="recImgDiv" *ngIf="i.pictures.length > 0">
+                <br><br><br>
+                <div class="recMsgImg" *ngFor="let x of i.pictures; index as n">
+                  <br>
+                  <img src="{{main.URL}}/{{x}}" width="80px" height="80px" style="border-radius: 20%;cursor: pointer;"
+                    data-toggle="modal" data-target="#exampleModal1">
+                  <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <img src="{{main.URL}}/{{x}}" width="450px" height="350px" style="border-radius: 10%;">
+                    </div>
+                  </div>
+                </div>
+                <br><br>
+              </div>
+              <br><br>
+              <div class="row">
+                <div class="col-xl-4 col-lg-3 col-md-2 col-sm-1">
+                  <hr>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10" style="text-align: center;">
+                  {{i.disTime}}
+                </div>
+                <div class="col-xl-4 col-lg-3 col-md-2 col-sm-1">
+                  <hr>
+                </div>
+              </div>
+              <br>
+            </div>
+          </ng-template>
+
+          <div *ngIf="this.userId===i.senderId;else elseBlock">
+            <div class="sender">
+              <p>{{i.message}}</p>
+            </div>
+            <br>
+            <div class="senImgDiv" *ngIf="i.pictures.length > 0">
+              <br><br><br>
+              <div class="senMsgImg" *ngFor="let x of i.pictures; index as n">
+                <img src="{{main.URL}}/{{x}}" width="80px" height="80px" style="border-radius: 30%;cursor: pointer;"
+                  data-toggle="modal" data-target="#exampleModal">
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <img src="{{main.URL}}/{{x}}" width="450px" height="350px" style="border-radius: 10%;">
+                  </div>
+                </div>
+              </div>
+
+
+
+              <br><br>
+            </div>
+            <br><br>
+            <div class="row">
+              <div class="col-xl-4 col-lg-3 col-md-2 col-sm-1">
+                <hr>
+              </div>
+              <div class="col" style="text-align: center;">
+                {{i.disTime}}
+              </div>
+              <div class="col-xl-4 col-lg-3 col-md-2 col-sm-1">
+                <hr>
+              </div>
+            </div>
+            <br>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="button ">
+        <div class="d-flex flex-row justify-content-between align-items-center border-0 h-100 inpCh">
+          <input class="w-100 border-0 p-2 flex-fill text-message text-truncate" [(ngModel)]="message"
+            [ngModelOptions]="{standalone: true}" type="text" placeholder="Write your message...">
+          &nbsp;
+          <button class="btn yellow" (click)="toggled = !toggled" [(emojiPickerIf)]="toggled"
+            [emojiPickerDirection]="'top'" (emojiPickerSelect)="handleSelection($event)">
+            <span class="material-icons">
+              sentiment_satisfied
+            </span>
+          </button>
+          <button class="btn perple" (click)="fileUpload.click()">
+            <span class="material-icons">
+              attachment
+            </span>
+          </button>
+          <button class="btn border-0 primary" (click)="sendNewMessage()">
+            <span class="material-icons">
+              send
+            </span>
+          </button>
+        </div>
+      </div>
+
+    </mat-card>
+  </div>
+</div>
+
+<div class="fileList">
+  <mat-selection-list #shoes1 [multiple]="false">
+    <mat-list-option style="margin-top: 40px;" *ngFor="let shoe1 of typesOf1;let i = index" [value]="shoe1.name">
+      <div class="row listRow">
+        <br><br>
+        <div class="col-11">
+          {{shoe1.name}}
+        </div>
+        <div class="col-1">
+          <span class="material-icons" (click)="removeFile(shoe1.name,i)">
+            clear
+          </span>
+        </div>
+      </div>
+    </mat-list-option>
+  </mat-selection-list>
+</div>
+
+<input #fileUpload type="file" (click)="fileUpload.value = null" (change)="importFile($event)" style="display:none">

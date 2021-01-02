@@ -1,0 +1,62 @@
+<div class="box">
+  <div class="mainrow">
+    <mat-card>
+      <mat-card-title style="text-align: center;">ODOO Login</mat-card-title>
+      <hr>
+      <mat-card-content>
+        <div>
+          <div>
+            <i class="fa fa-envelope" aria-hidden="true"> Email:</i>
+            <input type="email" [(ngModel)]="email" name="email" class="form-control">
+          </div>
+          <br>
+          <div>
+            <i class="fa fa-key" aria-hidden="true"> Password:</i>
+            <input type="password" [(ngModel)]="password" name="password" class="form-control">
+          </div>
+          <br>
+          <div style="text-align: center;">
+            <button mat-raised-button color="primary" (click)="adminLogin()">Login</button>
+          </div>
+          <br>
+          <div style="text-align: center;">
+            <h6 style="cursor: pointer;" data-toggle="modal" data-target="#myModal"><b><u> Forgot password ? </u></b>
+            </h6>
+          </div>
+          <br>
+          <div style="text-align: center;">
+            <h6 style="cursor: pointer;" (click)="registerPage()">
+              <b><u> New User ? </u></b>
+            </h6>
+          </div>
+          <br>
+        </div>
+
+
+        <br>
+
+        <!-- The Modal -->
+        <div class="modal" id="myModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title">Modal Heading</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <!-- Modal body -->
+              <div class="modal-body">
+                Modal body..
+              </div>
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

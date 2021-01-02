@@ -1,0 +1,107 @@
+<div>
+  <mat-card>
+    <div style="text-align: center;">
+      <h6>Image Preview</h6>
+      <hr>
+      <img [src]="imageURL" width="200px" height="200px">
+    </div>
+    <hr>
+
+    <div class="row">
+      <br>
+      <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
+        <div>
+          <mat-radio-group [(ngModel)]="contType" name="contType">
+            <mat-radio-button value="indvidual"> Individual</mat-radio-button>
+            &nbsp;&nbsp;
+            <mat-radio-button value="company"> Company</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <br>
+        <div>
+          <input type="text" [(ngModel)]="name" name="name" placeholder="Enter Name" class="form-control">
+        </div>
+        <br>
+        <div>
+          <input type="email" [(ngModel)]="email" name="email" class="form-control" placeholder="Enter email">
+        </div>
+        <br>
+        <div>
+          <input type="text" [(ngModel)]="phone" name="phone" placeholder="Enter phone" class="form-control">
+        </div>
+        <br>
+        <div>
+          <input type="text" [(ngModel)]="mobile" name="mobile" placeholder="Enter mobile" class="form-control">
+        </div>
+        <br>
+        <div>
+          <input type="text" [(ngModel)]="city" name="city" placeholder="Enter city" class="form-control">
+        </div>
+        <br>
+        <div>
+          <select class="form-control" [(ngModel)]="cityZone" name="cityZone">
+            <option value="" disabled>-- Select city zone--</option>
+            <option value="east"> East</option>
+            <option value="west"> West</option>
+            <option value="south"> South</option>
+            <option value="north"> North</option>
+            <option value="central"> Central</option>
+          </select>
+        </div>
+        <br>
+        <div>
+          <input type="text" [(ngModel)]="state" name="state" placeholder="Enter state" class="form-control">
+        </div>
+      </div>
+
+      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-0">
+      </div>
+
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+        <br>
+        <div>
+          <input type="text" [(ngModel)]="country" name="country" placeholder="Enter country" class="form-control">
+        </div>
+        <br>
+        <div>
+          <input type="file" accept="image/*" (change)="showPreview($event)" class="form-control">
+        </div>
+        <br>
+        <div>
+          <select class="form-control" [(ngModel)]="selectTag" name="selectTag">
+            <option value="" disabled>-- Select Tag--</option>
+            <option value="employee">Employee</option>
+            <option value="customer">Customer</option>
+            <option value="visitor">Visitor</option>
+          </select>
+        </div>
+        <br>
+        <div>
+          <input type="text" [(ngModel)]="website" name="website" placeholder="Enter website" class="form-control">
+        </div>
+        <br>
+        <div>
+          <input type="text" [(ngModel)]="gstin" name="gstin" placeholder="Enter GSTIN" class="form-control">
+        </div>
+        <br>
+        <div>
+          <input type="text" [(ngModel)]="panNo" name="panNo" placeholder="Enter PAN No." class="form-control">
+        </div>
+        <br>
+        <div>
+          <textarea [(ngModel)]="address" name="address" placeholder=" Enter address" class="form-control"
+            rows="6"></textarea>
+        </div>
+        <br>
+      </div>
+    </div>
+    <br>
+    <div style="text-align: center;">
+      <button mat-raised-button color="primary" (click)="addContact()">Submit</button>
+    </div>
+
+    <br>
+    <br>
+
+  </mat-card>
+</div>
